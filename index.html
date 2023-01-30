@@ -14,7 +14,7 @@
 <body>
     <main>
         <!-- landing page -->
-        <div class="landing-screen">
+        <div class="landing-screen" data-visible="true">
             <aside class="robot"></aside>
 
             <section class="text-boxs">
@@ -35,9 +35,149 @@
                 </span>
                 <button class="btn start-btn">here</button>
               </div>
-
             </section>
         </div>
+
+        <!-- form pages -->
+        <section class="form-screen" data-visible="false">
+          <!-- =================================================page 1 -->
+          <div class="form-1 form-page" data-active="true">
+            <div class="form-wrapper">
+              <div class="form-title">
+                <h2>start a new skill</h2>
+                <div class="title-underline"></div>
+              </div>
+            
+              <div class="form-1-input form-input">
+                <form autocomplete="off">
+                  <label for="skill" class="form-label">What do you want to learn?</label>
+                  <input type="text" class="skill-input" name="skill" id="skill" placeholder="spanish, piano, astronomy..">
+
+                  <p>Chose anything from a new language, a new music instrument or a subject that your interested in.</p>
+                </form>
+                <form class="total-hours-form" autocomplete="off">
+                  <label for="total-hours" class="form-label">How many total hours will you commit?</label>
+                  <label class="total-hr-label">50<input type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">100<input type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">200<input type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">400<input type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">600<input type="radio" name="total-hours"></label>
+                  <br>
+                  <label class="total-hr-label" title="insert a number > 50 to 2000">Custom hours<input class="custom-hr" type="text" name="total-hours-custom" placeholder="hours"></label>
+                </form>
+              </div>
+            </div>
+            <aside class="hours-description">
+              <div class="up-arrow"><i class="fa-solid fa-angle-up"></i>
+              </div>
+              <h6>Beginner 0-50 - just trying things out</h6>
+              <h6>Rookie 100-300 - I'm serious about this</h6>
+              <h6>Intermediate 300-600 - I will get good at this</h6>
+              <h6>Advance 600-1000> - Passionate level!</h6>
+            </aside>
+          </div>
+           <!--==================================================== page 2 -->
+          <div class="form-2 form-page" data-active="false">
+            <div class="form-wrapper">
+              <div class="form-title">
+                <h2>Let's get to it</h2>
+                <div class="title-underline"></div>
+              </div>
+              <div class="form-2-input form-input">
+                <form class="total-days-form">
+                  <label for="total-days" class="form-label">How many <span>days</span> per week can you commit?</label>
+                  <label class="total-days-label">1<input type="radio" name="total-days"></label>
+                  <label class="total-days-label">2<input type="radio" name="total-days"></label>
+                  <label class="total-days-label">3<input type="radio" name="total-days"></label>
+                  <label class="total-days-label">4<input type="radio" name="total-days"></label>
+                  <label class="total-days-label">5<input type="radio" name="total-days"></label>
+                  <label class="total-days-label">6<input type="radio" name="total-days"></label>
+                  <label class="total-days-label">7<input type="radio" name="total-days"></label>
+                </form>
+                <form class="total-hours-per daily-hours">
+                  <label for="total-hours" class="form-label">How many <span>hours</span> per day can you study?</label>
+                  <label class="total-hours-label">1<input type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">2<input type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">3<input type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">4<input type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">5<input type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">6<input type="radio" name="daily-hours"></label>
+                </form>
+              </div>
+            </div>
+            <aside class="form-2-quote">
+              <h6> “Success isn't always about greatness. It's about consistency. Consistent hard work leads to success.” <span>- Dwayne Johnso</span></h6>
+            </aside>
+          </div>
+           <!-- ============================================= page 3 -->
+          <div class="form-3 form-page" data-active="false">
+            <div class="form-wrapper">
+              <div class="form-title">
+                <h2>Some really good stuff below<span class="form-3-arrow"><i class="fa-solid fa-arrow-down"></i></span></h2>
+                <div class="title-underline"></div>
+              </div>
+              <div class="form-3-input form-input">
+                <h5>Before we finish.. here are some highly recomended books that have help me and can you you in your acheich sussen in your new skill.</h5>
+                <div class="form-3-list-container">
+
+                  <a href="" class="from-3-list-items">
+                    <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
+                    <p>book title</p>
+                  </a>
+                  <a href="" class="from-3-list-items">
+                      <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
+                      <p>book title</p>
+                  </a>
+                  <a href="" class="from-3-list-items">
+                      <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
+                      <p>book title</p>
+                  </a>
+                  <a href="" class="from-3-list-items">
+                      <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
+                      <p>book title</p>
+                  </a>
+                  <a href="" class="from-3-list-items">
+                    <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
+                    <p>book title</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- ============================================= page 4 -->
+          <div class="form-4 form-page" data-active="false">
+            <div class="form-wrapper">
+              <div class="form-title">
+                <h1>page 4</h1>
+                <div class="title-underline"></div>
+              </div>
+              <div class="form-4-input form-input">
+                <form>
+
+                </form>
+                <form>
+
+                </form>
+              </div>
+           </div>
+          </div>
+
+          <!-- progess bar -->
+          <div class="progress-btns">
+            <div class="progress-container">
+              <div class="progress" id="progress"></div>
+              <div class="circle active">1</div>
+              <div class="circle">2</div>
+              <div class="circle">3</div>
+              <div class="circle">4</div>
+            </div>
+      
+            <button class="progress-btn" id="prev" disabled>Prev</button>
+            <button class="progress-btn" id="next">Next</button>
+            <span class="alert alert-danger">fill out form to continue</span>
+          </div>
+        </section>
+
         <!-- ramdom quote -->
         <section id="quote">
             <h5>"Lorem ipsum dolor, sit amet consectetur adipisicing."</h5>
@@ -46,6 +186,6 @@
     </main>
 
 <!-- script -->
-<script src="app.js"></script>    
+<script type="module" src="app.js"></script>    
 </body>
 </html>
