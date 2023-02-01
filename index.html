@@ -14,7 +14,7 @@
 <body>
     <main>
         <!-- landing page -->
-        <div class="landing-screen" data-visible="true">
+        <div class="landing-screen" data-visible="false">
             <aside class="robot"></aside>
 
             <section class="text-boxs">
@@ -39,7 +39,7 @@
         </div>
 
         <!-- form pages -->
-        <section class="form-screen" data-visible="false">
+        <section class="form-screen" data-visible="true">
           <!-- =================================================page 1 -->
           <div class="form-1 form-page" data-active="true">
             <div class="form-wrapper">
@@ -51,19 +51,19 @@
               <div class="form-1-input form-input">
                 <form autocomplete="off">
                   <label for="skill" class="form-label">What do you want to learn?</label>
-                  <input type="text" class="skill-input" name="skill" id="skill" placeholder="spanish, piano, astronomy..">
+                  <input title="Enter skill between 1-20 characters" type="text" class="skill-input" name="skill" id="skill" placeholder="spanish, piano, astronomy..">
 
                   <p>Chose anything from a new language, a new music instrument or a subject that your interested in.</p>
                 </form>
                 <form class="total-hours-form" autocomplete="off">
                   <label for="total-hours" class="form-label">How many total hours will you commit?</label>
-                  <label class="total-hr-label">50<input type="radio" name="total-hours"></label>
-                  <label class="total-hr-label">100<input type="radio" name="total-hours"></label>
-                  <label class="total-hr-label">200<input type="radio" name="total-hours"></label>
-                  <label class="total-hr-label">400<input type="radio" name="total-hours"></label>
-                  <label class="total-hr-label">600<input type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">50<input value="50" type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">100<input value="100" type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">200<input value="200" type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">400<input value="400" type="radio" name="total-hours"></label>
+                  <label class="total-hr-label">600<input value="600" type="radio" name="total-hours"></label>
                   <br>
-                  <label class="total-hr-label" title="insert a number > 50 to 2000">Custom hours<input class="custom-hr" type="text" name="total-hours-custom" placeholder="hours"></label>
+                  <label class="total-hr-label" title="Insert a number > 50 to 2000">Custom hours<input class="custom-hr" type="text" name="total-hours-custom" placeholder="hours"></label>
                 </form>
               </div>
             </div>
@@ -76,6 +76,7 @@
               <h6>Advance 600-1000> - Passionate level!</h6>
             </aside>
           </div>
+
            <!--==================================================== page 2 -->
           <div class="form-2 form-page" data-active="false">
             <div class="form-wrapper">
@@ -86,22 +87,22 @@
               <div class="form-2-input form-input">
                 <form class="total-days-form">
                   <label for="total-days" class="form-label">How many <span>days</span> per week can you commit?</label>
-                  <label class="total-days-label">1<input type="radio" name="total-days"></label>
-                  <label class="total-days-label">2<input type="radio" name="total-days"></label>
-                  <label class="total-days-label">3<input type="radio" name="total-days"></label>
-                  <label class="total-days-label">4<input type="radio" name="total-days"></label>
-                  <label class="total-days-label">5<input type="radio" name="total-days"></label>
-                  <label class="total-days-label">6<input type="radio" name="total-days"></label>
-                  <label class="total-days-label">7<input type="radio" name="total-days"></label>
+                  <label class="total-days-label">1<input value="1" type="radio" name="total-days"></label>
+                  <label class="total-days-label">2<input value="2" type="radio" name="total-days"></label>
+                  <label class="total-days-label">3<input value="3" type="radio" name="total-days"></label>
+                  <label class="total-days-label">4<input value="4" type="radio" name="total-days"></label>
+                  <label class="total-days-label">5<input value="5" type="radio" name="total-days"></label>
+                  <label class="total-days-label">6<input value="6" type="radio" name="total-days"></label>
+                  <label class="total-days-label">7<input value="7" type="radio" name="total-days"></label>
                 </form>
                 <form class="total-hours-per daily-hours">
                   <label for="total-hours" class="form-label">How many <span>hours</span> per day can you study?</label>
-                  <label class="total-hours-label">1<input type="radio" name="daily-hours"></label>
-                  <label class="total-hours-label">2<input type="radio" name="daily-hours"></label>
-                  <label class="total-hours-label">3<input type="radio" name="daily-hours"></label>
-                  <label class="total-hours-label">4<input type="radio" name="daily-hours"></label>
-                  <label class="total-hours-label">5<input type="radio" name="daily-hours"></label>
-                  <label class="total-hours-label">6<input type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">1<input value="1" type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">2<input value="2" type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">3<input value="3" type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">4<input value="4" type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">5<input value="5" type="radio" name="daily-hours"></label>
+                  <label class="total-hours-label">6<input value="6" type="radio" name="daily-hours"></label>
                 </form>
               </div>
             </div>
@@ -109,56 +110,83 @@
               <h6> “Success isn't always about greatness. It's about consistency. Consistent hard work leads to success.” <span>- Dwayne Johnso</span></h6>
             </aside>
           </div>
+
            <!-- ============================================= page 3 -->
           <div class="form-3 form-page" data-active="false">
             <div class="form-wrapper">
               <div class="form-title">
-                <h2>Some really good stuff below<span class="form-3-arrow"><i class="fa-solid fa-arrow-down"></i></span></h2>
+                <h2>Some recomended books below<span class="form-3-arrow"><i class="fa-solid fa-arrow-down"></i></span></h2>
                 <div class="title-underline"></div>
               </div>
               <div class="form-3-input form-input">
-                <h5>Before we finish.. here are some highly recomended books that have help me and can you you in your acheich sussen in your new skill.</h5>
+                <h5>Before we finish.. Here are some highly recomended books that can help you in your jurney to learning a new skill.</h5>
                 <div class="form-3-list-container">
 
-                  <a href="" class="from-3-list-items">
-                    <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
-                    <p>book title</p>
+                  <a href="https://www.amazon.com/Ultralearning-Scott-Young-audiobook/dp/B07ST3Z1Q6/ref=tmm_aud_swatch_0?_encoding=UTF8&qid=1675111389&sr=1-1" class="from-3-list-items" target="_blank" rel="noopener noreferrer">
+                    <img src="https://m.media-amazon.com/images/I/51D5dwBcSFL.jpg" alt="book-image">
+                    <p>Ultra Learning</p>
                   </a>
-                  <a href="" class="from-3-list-items">
-                      <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
-                      <p>book title</p>
+                  <a href="https://www.amazon.com/Atomic-Habits-James-Clear-audiobook/dp/B07RFSSYBH/ref=sr_1_1?keywords=atomic+habits&qid=1675112258&s=audible&sprefix=atomic%2Caudible%2C124&sr=1-1" class="from-3-list-items" target="_blank" rel="noopener noreferrer">
+                      <img src="https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg" alt="book-image">
+                      <p>Atomic Habits</p>
                   </a>
-                  <a href="" class="from-3-list-items">
-                      <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
-                      <p>book title</p>
+                  <a href="https://www.amazon.com/Extreme-Ownership-audiobook/dp/B015TM0RM4/ref=sr_1_1?keywords=extreme+ownership&qid=1675112276&sprefix=extrem%2Caps%2C119&sr=8-1" class="from-3-list-items" target="_blank" rel="noopener noreferrer">
+                      <img src="https://m.media-amazon.com/images/I/51EDhEokzbL.jpg" alt="book-image">
+                      <p>Extreme Ownership</p>
                   </a>
-                  <a href="" class="from-3-list-items">
-                      <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
-                      <p>book title</p>
+                  <a href="https://www.amazon.com/Peak-Robert-Pool-Anders-Ericsson-audiobook/dp/B01F4A98WQ/ref=sr_1_1?crid=19E7SBBRIMFVJ&keywords=peak&qid=1675112340&sprefix=peak%2Caps%2C180&sr=8-1" class="from-3-list-items" target="_blank" rel="noopener noreferrer">
+                      <img src="https://m.media-amazon.com/images/I/41s2pI8zGAL.jpg" alt="book-image">
+                      <p>Peak</p>
                   </a>
-                  <a href="" class="from-3-list-items">
-                    <img src="https://books.google.com/books/publisher/content?id=jyV2DwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0BIHmCUzvn_j4jIehsAYrb4jEKgQ&w=1280" alt="">
-                    <p>book title</p>
+                  <a href="https://www.amazon.com/Living-with-SEAL-Jesse-Itzler-audiobook/dp/B0176MAG1M/ref=sr_1_1?crid=2JXJIFDVQRYA&keywords=leaving+with+a+seal&qid=1675112425&sprefix=leaving+with+a+seal%2Caps%2C104&sr=8-1" class="from-3-list-items" target="_blank" rel="noopener noreferrer">
+                    <img src="https://m.media-amazon.com/images/I/51FGw-MnsSL._SX335_BO1,204,203,200_.jpg" alt="book-image">
+                    <p>Living with a SEAL</p>
                   </a>
                 </div>
               </div>
             </div>
           </div>
+
            <!-- ============================================= page 4 -->
           <div class="form-4 form-page" data-active="false">
-            <div class="form-wrapper">
+            <div class="form-4-wrapper">
+
               <div class="form-title">
-                <h1>page 4</h1>
-                <div class="title-underline"></div>
+                <h2>Let's calculate!</h2>
+                <div class="title-underline"></div> 
+                <button class="btn calculate-btn">Calculate</button>
               </div>
-              <div class="form-4-input form-input">
-                <form>
+              
+              <section class="results-area">
+                <div class="results-area-1">
+                  <button class="btn back-to-start" disabled>Back to Start</button>
+                  <aside class="results-container">
+                      <h5>Your new skill is: <span class="my-skill"></span></h5>
+                      <h6>total hours -<span></span></h6>
+                      <h6>days per week -<span></span></h6>
+                      <h6>hours per day -<span></span></h6>
+                  </aside>
+                </div>
 
-                </form>
-                <form>
+                <div class="results-area-2">
+                  <aside class="calendar-container">
+                    <h6 class="eta">Estimated completion day</h6>
+                    <div class="calendar">
+                      <h5 class="month">completion day</h5>
+                      <h5 class="day">?</h5>
+                      <h6 class="year">2023</h6>
+                    </div>
+                    <h6>??? days from now</h6>
+                  </aside>
+                </div>
 
-                </form>
-              </div>
+                <div class="results-area-3">
+                  <aside class="text-container">
+                    <p></p>
+                  </aside>
+                </div>
+            </section>
+
            </div>
           </div>
 
@@ -186,6 +214,7 @@
     </main>
 
 <!-- script -->
-<script type="module" src="app.js"></script>    
+<script type="module" src="app.js"></script> 
+<script src="lib/moment.min.js"></script>   
 </body>
 </html>
