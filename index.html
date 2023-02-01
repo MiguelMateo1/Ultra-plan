@@ -14,7 +14,7 @@
 <body>
     <main>
         <!-- landing page -->
-        <div class="landing-screen" data-visible="false">
+        <div class="landing-screen" data-visible="true">
             <aside class="robot"></aside>
 
             <section class="text-boxs">
@@ -24,8 +24,8 @@
 
               <div class="box box2">
                 <h4>Time to take action and learn a new 
-                    <span class="sill-slider">skill..</span></h4>
-                    <h5>Here you can calculate how much total hours you would like to dedicate to a new skill and we'll calculate in how long you should accomplish your goal..</h5>
+                    <span class="sill-slider">skill or subject..</span></h4>
+                    <h5>Here you can calculate how much total hours you would like to dedicate to learning a new skill and we'll calculate in how long you should accomplish your goal by..</h5>
               </div>
 
               <div class="box box3">
@@ -39,7 +39,7 @@
         </div>
 
         <!-- form pages -->
-        <section class="form-screen" data-visible="true">
+        <section class="form-screen" data-visible="false">
           <!-- =================================================page 1 -->
           <div class="form-1 form-page" data-active="true">
             <div class="form-wrapper">
@@ -53,7 +53,7 @@
                   <label for="skill" class="form-label">What do you want to learn?</label>
                   <input title="Enter skill between 1-20 characters" type="text" class="skill-input" name="skill" id="skill" placeholder="spanish, piano, astronomy..">
 
-                  <p>Chose anything from a new language, a new music instrument or a subject that your interested in.</p>
+                  <p>Chose anything from a new language, learning a music instrument or a subject that you're interested in.</p>
                 </form>
                 <form class="total-hours-form" autocomplete="off">
                   <label for="total-hours" class="form-label">How many total hours will you commit?</label>
@@ -70,7 +70,7 @@
             <aside class="hours-description">
               <div class="up-arrow"><i class="fa-solid fa-angle-up"></i>
               </div>
-              <h6>Beginner 0-50 - just trying things out</h6>
+              <h6>Beginner 0-50 - Just trying things out</h6>
               <h6>Rookie 100-300 - I'm serious about this</h6>
               <h6>Intermediate 300-600 - I will get good at this</h6>
               <h6>Advance 600-1000> - Passionate level!</h6>
@@ -81,7 +81,7 @@
           <div class="form-2 form-page" data-active="false">
             <div class="form-wrapper">
               <div class="form-title">
-                <h2>Let's get to it</h2>
+                <h2>Chose your commitment</h2>
                 <div class="title-underline"></div>
               </div>
               <div class="form-2-input form-input">
@@ -115,11 +115,11 @@
           <div class="form-3 form-page" data-active="false">
             <div class="form-wrapper">
               <div class="form-title">
-                <h2>Some recomended books below<span class="form-3-arrow"><i class="fa-solid fa-arrow-down"></i></span></h2>
+                <h2>Some recommended books below<span class="form-3-arrow"><i class="fa-solid fa-arrow-down"></i></span></h2>
                 <div class="title-underline"></div>
               </div>
               <div class="form-3-input form-input">
-                <h5>Before we finish.. Here are some highly recomended books that can help you in your jurney to learning a new skill.</h5>
+                <h5>Before we finish.. Here are some highly recommended books that can help you in your journey to learning a new skill.</h5>
                 <div class="form-3-list-container">
 
                   <a href="https://www.amazon.com/Ultralearning-Scott-Young-audiobook/dp/B07ST3Z1Q6/ref=tmm_aud_swatch_0?_encoding=UTF8&qid=1675111389&sr=1-1" class="from-3-list-items" target="_blank" rel="noopener noreferrer">
@@ -162,15 +162,15 @@
                   <button class="btn back-to-start" disabled>Back to Start</button>
                   <aside class="results-container">
                       <h5>Your new skill is: <span class="my-skill"></span></h5>
-                      <h6>total hours -<span></span></h6>
-                      <h6>days per week -<span></span></h6>
-                      <h6>hours per day -<span></span></h6>
+                      <h6>Total hours -<span></span></h6>
+                      <h6>Days per week -<span></span></h6>
+                      <h6>Hours per day -<span></span></h6>
                   </aside>
                 </div>
 
                 <div class="results-area-2">
                   <aside class="calendar-container">
-                    <h6 class="eta">Estimated completion day</h6>
+                    <h6 class="eta">Estimated completion date</h6>
                     <div class="calendar">
                       <h5 class="month">completion day</h5>
                       <h5 class="day">?</h5>
@@ -204,12 +204,6 @@
             <button class="progress-btn" id="next">Next</button>
             <span class="alert alert-danger">fill out form to continue</span>
           </div>
-        </section>
-
-        <!-- ramdom quote -->
-        <section id="quote">
-            <h5>"Lorem ipsum dolor, sit amet consectetur adipisicing."</h5>
-            <button class="btn quote-btn">New quote</button>
         </section>
     </main>
 

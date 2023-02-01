@@ -41,19 +41,19 @@ function calculateResult(date) {
 
                 <div class="results-area-2">
                     <aside class="calendar-container">
-                    <h6 class="eta">Estimated completion day</h6>
+                    <h6 class="eta">Estimated completion date</h6>
                         <div class="calendar">
                         <h5 class="month">${month}</h5>
                         <h5 class="day">${day}</h5>
                         <h6 class="year">${year}</h6>
                     </div>
-                    <h6>Thats ${daysToComplete} days from now!</h6>
+                    <h6>Thats ${daysToComplete} days from now!!</h6>
               </aside>
                 </div>
 
                 <div class="results-area-3">
                   <aside class="text-container">
-                    <p>Studying/learing ${daysPerWeek} days per week and dedicating ${hoursPerDay} hours per day your should achieve you goal around ${completeDay.format('MMMM Do YYYY')}.</p>
+                    <p>Studying/learning ${daysPerWeek} days per week and dedicating ${hoursPerDay} hours per day you should achieve your goal around ${completeDay.format('MMMM Do YYYY')}.</p>
                   </aside>
                 </div>`
 }
