@@ -31,6 +31,7 @@ function calculateResult(date) {
 
     return resultsContainer.innerHTML = `<div class="results-area-1">
                   <button class="btn back-to-start">Back to start</button>
+                  <button class="btn save-skill">Save Skill</button>
                   <aside class="results-container">
                       <h5>Your new skill is: <span class="my-skill">${skillInput}</span></h5>
                       <h6>Total hours - <span>${totalHours}</span></h6>

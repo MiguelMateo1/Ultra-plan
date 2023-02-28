@@ -3,14 +3,19 @@ import getCurrentFormPage from "./getCurrentForm.js";
 import startForm from "./startForm.js";
 import { formOneValidate, formTwoValidate } from "./formValidate.js";
 import calculateResult from "./calculateResult.js";
+import saveSkill from "./saveSkill.js"
 
+// progress bar 
 const startBtn = document.querySelector('.start-btn');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const circles = document.querySelectorAll('.circle');
+// form validation alert
 const alert = document.querySelector('.alert');
+// results area page/ btns
 const calculateBtn = document.querySelector('.calculate-btn');
 const resultsContainer = document.querySelector('.results-area');
+
 
 //============ btn event listeners
 // will display first form and hides landing page when cliked
@@ -26,16 +31,21 @@ calculateBtn.addEventListener('click', () => {
     // setTimeout to display loader for 3 secound
     // calling results funtion and passing todays date (moment library)
     setTimeout(calculateResult, 2000, moment())
-    // gets 'Back to start' btn and sets event listener on newly displayed btn 
+    // gets 'Back to start' and 'Save skill' btn and sets event listener on newly displayed btn's 
     window.onload = setTimeout(displayResetBtn, 2000);
 });
 
-// once results are displayed, this will display the 'Back To Start' btn
+// once results are displayed, this will display the 'Back To Start' and 'Save skill' btn
 function displayResetBtn () {
-    const backToStartBtn = document.querySelector('.back-to-start')
+    const backToStartBtn = document.querySelector('.back-to-start');
+    const saveSkillsBtn = document.querySelector('.save-skill');
 
     backToStartBtn.addEventListener('click', () => {
      window.location.reload()
+    });
+    // btn to save skill and show on botton of page
+    saveSkillsBtn.addEventListener('click', () => {
+      saveSkill(moment())
     });
 }
 

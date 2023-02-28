@@ -854,17 +854,12 @@ main {
   position: absolute;
   visibility: visible;
   top: 25.6%;
-  left: 50%;
+  left: 42.5%;
   transform: translate(-50%, -50%);
 }
 
 .back-to-start:disabled {
   visibility: hidden;
-}
-
-.back-to-start:disabled:hover {
-  background-color: #999;
-  cursor: not-allowed;
 }
 
 .back-to-start:hover {
@@ -905,6 +900,7 @@ main {
   }
   .back-to-start {
     top: 26%;
+    left: 35%;
     transition: .5s;
     padding: 3px 5px;
     margin-top: 7px;
@@ -1016,7 +1012,7 @@ main {
 /*================================= skills ribbon */
 .my-skills {
   position: relative;
-  display: none;
+  /* display: none; */
 }
 
 .skills-ribbon {
@@ -1068,6 +1064,7 @@ main {
   position: relative;
   cursor: pointer;
   opacity: 0;
+  visibility: none;
   transition: var(--transition);
 }
 
@@ -1112,7 +1109,7 @@ main {
   top: 12px;
   left: 20px;
   transition: var(--transition);
-  color: orange;
+  color: #f88c3f;
   z-index: 1;
 }
 
@@ -1121,5 +1118,41 @@ main {
 }
 
 .skills-ribbon:hover .show-skill {
+  visibility: visible;
   opacity: 1;
 }
+
+.save-skill {
+  background-color: #f88c3f;
+  position: absolute;
+  visibility: visible;
+  top: 25.6%;
+  left: 57.5%;
+  transform: translate(-50%, -50%);
+}
+
+.save-skill:disabled {
+  visibility: hidden;
+}
+
+/* .save-skill:disabled:hover {
+  background-color: #999;
+  cursor: not-allowed;
+} */
+
+.save-skill:hover {
+  background-color: #dd7225;
+}
+
+/* small screen */
+@media screen and (max-width:700px) {
+  .save-skill {
+    top: 26%;
+    left: 65%;
+    transition: .5s;
+    padding: 3px 5px;
+    margin-top: 7px;
+  }
+}
+
+
