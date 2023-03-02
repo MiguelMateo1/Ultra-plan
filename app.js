@@ -5,14 +5,20 @@ import { formOneValidate, formTwoValidate } from "./formValidate.js";
 import calculateResult from "./calculateResult.js";
 import saveSkill from "./saveSkill.js"
 
-// progress bar 
+// empty array, to push into saved skill array once you save a skill
+let value = []
+
+let savedSkills = JSON.parse(localStorage.getItem("last"))
+console.log("final saved values 1", savedSkills)
+
+// progress bar elements select
 const startBtn = document.querySelector('.start-btn');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const circles = document.querySelectorAll('.circle');
-// form validation alert
+// form validation alert element
 const alert = document.querySelector('.alert');
-// results area page/ btns
+// results area page/ btns elements
 const calculateBtn = document.querySelector('.calculate-btn');
 const resultsContainer = document.querySelector('.results-area');
 
@@ -46,6 +52,15 @@ function displayResetBtn () {
     // btn to save skill and show on botton of page
     saveSkillsBtn.addEventListener('click', () => {
       saveSkill(moment())
+      saveSkillsBtn.classList.add('active');
+    //   save skill to local storage
+      value = JSON.parse(localStorage.getItem("value"))
+      console.log("saved value", value)
+      savedSkills.push(value)
+      localStorage.setItem("last", JSON.stringify(savedSkills));
+      JSON.parse(localStorage.getItem("last"))
+      displaySavedSkill()
+      console.log("final saved values", savedSkills)
     });
 }
 
@@ -122,3 +137,28 @@ customHour.addEventListener("change", () => {
 function loadingIcon() {
     return resultsContainer.innerHTML = `<div class="robot-loading-gif"></div>`
 }
+
+// displays saved skills 
+function displaySavedSkill () {
+    const savedSkillsContainer = document.querySelector('.my-skills');
+
+    const skillsContainer = document.querySelector(".skills-area");
+    const skillTitle = document.createElement('h4');
+    skillTitle.innerHTML = 'My Skills'
+
+    const newSkill = savedSkills.map((skills) => {
+        const {day, skill} = skills
+
+        return `<div class="show-skill">
+                    <h5>${skill}</h5>
+                    <p>${day} days left</p>
+                    <i class="fa-solid fa-trash-can delete"></i>
+            </div>`
+    }).join("")
+
+return (
+    savedSkillsContainer.prepend(skillTitle)
+    ), skillsContainer.innerHTML = newSkill
+}
+
+displaySavedSkill ()

@@ -1052,7 +1052,8 @@ main {
 
 .skills-area {
   display: grid;
-  grid-template-columns: min-content;
+  grid-template-columns: auto;
+  justify-content: start;
   grid-auto-flow: column;
   gap: 1rem;
 }
@@ -1066,6 +1067,7 @@ main {
   opacity: 0;
   visibility: none;
   transition: var(--transition);
+  transition-delay: .1s;
 }
 
 .skills-area h5 {
@@ -1103,17 +1105,25 @@ main {
   transform-origin: bottom;
 }
 
-.view-more {
+.delete {
   opacity: 0;
+  visibility: hidden;
   position: absolute;
-  top: 12px;
-  left: 20px;
+  font-size: 1.4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: var(--transition);
   color: #f88c3f;
   z-index: 1;
 }
 
-.show-skill:hover .view-more {
+.delete:hover {
+  color: #dd7225;
+}
+
+.show-skill:hover .delete {
+  visibility: visible;
   opacity: 1;
 }
 
@@ -1131,14 +1141,19 @@ main {
   transform: translate(-50%, -50%);
 }
 
+.save-skill.active {
+  background-color: #999;
+}
+
 .save-skill:disabled {
+  background-color: #999;
   visibility: hidden;
 }
 
-/* .save-skill:disabled:hover {
+.save-skill.active:hover {
   background-color: #999;
   cursor: not-allowed;
-} */
+}
 
 .save-skill:hover {
   background-color: #dd7225;
