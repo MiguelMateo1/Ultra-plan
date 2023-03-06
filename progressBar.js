@@ -25,6 +25,7 @@ function updateBar(circles, currentActive, prev, next) {
 
         // calculates % to add to the sytle.width progress line
         let progressLine = (actives.length - 1) / (4 - 1) * 100 + "%";
+        console.log(progressLine)
 
         if (progressLine == 100 + "%") {
             // set width when progress line in full/100% 

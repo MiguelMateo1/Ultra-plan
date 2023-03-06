@@ -34,33 +34,48 @@ calculateBtn.addEventListener('click', () => {
 
     loadingIcon();
 
-    // setTimeout to display loader for 3 secound
+    // setTimeout to display loader for 2 secound
     // calling results funtion and passing todays date (moment library)
     setTimeout(calculateResult, 2000, moment())
     // gets 'Back to start' and 'Save skill' btn and sets event listener on newly displayed btn's 
-    window.onload = setTimeout(displayResetBtn, 2000);
+    window.onload = setTimeout(displayFormBtn, 2000);
 });
 
 // once results are displayed, this will display the 'Back To Start' and 'Save skill' btn
-function displayResetBtn () {
-    const backToStartBtn = document.querySelector('.back-to-start');
+function displayFormBtn () {
     const saveSkillsBtn = document.querySelector('.save-skill');
+    const backToStartBtn = document.querySelector('.back-to-start');
 
     backToStartBtn.addEventListener('click', () => {
+    saveSkillsBtn.classList.remove('active');
      window.location.reload()
     });
+
     // btn to save skill and show on botton of page
     saveSkillsBtn.addEventListener('click', () => {
-      saveSkill(moment())
-      saveSkillsBtn.classList.add('active');
-    //   save skill to local storage
-      value = JSON.parse(localStorage.getItem("value"))
-      console.log("saved value", value)
-      savedSkills.push(value)
-      localStorage.setItem("last", JSON.stringify(savedSkills));
-      JSON.parse(localStorage.getItem("last"))
-      displaySavedSkill()
-      console.log("final saved values", savedSkills)
+
+      if (saveSkillsBtn.classList.contains('active')) {
+            return 
+        } else {
+            saveSkill(moment())
+            saveSkillsBtn.classList.add('active');
+            //   save skill to local storage
+            value = JSON.parse(localStorage.getItem("value"))
+            savedSkills.push(value)
+            localStorage.setItem("last", JSON.stringify(savedSkills));
+            JSON.parse(localStorage.getItem("last"))
+
+            //   set id to saved skills
+            function setSkillsId () {
+                for (var i = 0; i < savedSkills.length; i++) {
+                    savedSkills[i].id = i
+                } 
+                    localStorage.setItem("last", JSON.stringify(savedSkills));
+                }
+            setSkillsId()
+            displaySavedSkill() 
+            //  console.log("final saved values", savedSkills)
+        }
     });
 }
 
@@ -88,7 +103,7 @@ next.addEventListener('click', () => {
     }
 
     // form two validation
-    if (formTwoValidate() && formOneValidate()) {
+    if (formTwoValidate() && formOneValidate()) { 
         currentActive++
 
         alert.classList.remove('active');
@@ -146,19 +161,40 @@ function displaySavedSkill () {
     const skillTitle = document.createElement('h4');
     skillTitle.innerHTML = 'My Skills'
 
-    const newSkill = savedSkills.map((skills) => {
-        const {day, skill} = skills
+    savedSkills[0] ? savedSkillsContainer.classList.add('active') : savedSkillsContainer.classList.remove('active');
 
-        return `<div class="show-skill">
+    const newSkill = savedSkills.map((skills) => {
+        const {id, day, skill, hours} = skills
+
+        return `<div class="show-skill" data-id="${id}">
                     <h5>${skill}</h5>
-                    <p>${day} days left</p>
+                    <p>${hours} hours</p>
+                    <p>${day}</p>
                     <i class="fa-solid fa-trash-can delete"></i>
-            </div>`
+                </div>`
     }).join("")
 
 return (
     savedSkillsContainer.prepend(skillTitle)
     ), skillsContainer.innerHTML = newSkill
 }
+displaySavedSkill()
 
-displaySavedSkill ()
+// delete saved skill function
+function deleteSkill () {
+    const skillsRibbon = document.querySelector('.skills-ribbon');
+
+    skillsRibbon.addEventListener('click', (e) => {
+        if (e.target && e.target.tagName === "I") {
+            let selected = e.target.parentNode.dataset.id
+
+            let index = savedSkills.findIndex(x => x.id == selected)
+    
+            savedSkills.splice(index,1)
+                
+            localStorage.setItem("last", JSON.stringify(savedSkills));
+            displaySavedSkill()
+        }
+    })
+}
+deleteSkill()

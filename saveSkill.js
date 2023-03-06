@@ -20,7 +20,13 @@ function saveSkill(date) {
     const totalWeeks = (totalHours / hoursPerWeek);
     const daysToComplete = Math.round(totalWeeks * 7);
 
-    var name = {day: daysToComplete, skill: skillInput}
+    const completeDay = date.add(daysToComplete, 'days');
+
+    const month = completeDay.format('MMM')
+    const day = completeDay.format('D');
+    const year = completeDay.format('YYYY');
+
+    var name = {day: `${month} ${day}, ${year}`, hours: totalHours, skill: skillInput}
     // localStorage.setItem("value", JSON.stringify(name));
 
         return (
