@@ -8,6 +8,7 @@
 
 html {
   font-size: 100%;
+  scale: .95;
 } /*16px*/
 
 :root {
@@ -60,11 +61,9 @@ html {
 }
 
 body {
-  background: var(--backgroundColor);
-  background-color: var(--primary-900);
-  font-family: var(--bodyFont);
-  font-weight: 400;
-  line-height: 1.75;
+  background: var(--primary-900);
+  background: linear-gradient(146deg, rgba(9,6,64,1) 11%, rgba(23,50,91,1) 53%, rgba(68,132,145,1) 100%);
+  background-attachment: fixed;
   color: var(--textColor);
 }
 
@@ -216,7 +215,7 @@ main {
   margin: 40px auto;
   border-radius: 30px;
   background: #ffffff;
-  box-shadow: 1px 5px 10px var(--grey-600);
+  box-shadow: var(--shadow-4);
   z-index: 3;
 }
 
@@ -415,13 +414,12 @@ main {
 
 /*================================= form page one */
 .form-screen {
-  /* min-height: 640px; */
   width: 85vw;
   max-width: 1100px;
   margin: 40px auto;
   border-radius: 30px;
   background: #ffffff;
-  box-shadow: 1px 5px 10px var(--grey-600);
+  box-shadow: var(--shadow-4);
   display: none;
   grid-template-rows: 1fr 130px;
   position: relative;
@@ -479,13 +477,14 @@ main {
 }
 
 .hours-description h6 {
-  font-size: .81rem;
+  font-size: .825rem;
+  letter-spacing: .2px;
   margin: 0;
   color: var(--grey-700);
 }
 
 .hours-description:hover {
-  height: 112px;
+  height: 90px;
  }
 
  .up-arrow {
@@ -502,8 +501,9 @@ main {
 
 .form-label {
   font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: .4px;
 }
-
 
 .form-1-input form {
   width: 100%;
@@ -511,7 +511,8 @@ main {
 
 .form-1-input p {
   max-width: 350px;
-  font-size: .85rem;
+  font-size: 1rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri;
 }
 
 .total-hr-label{
@@ -525,11 +526,11 @@ main {
   padding: 0.375rem 0.75rem;
   border-radius: var(--borderRadius);
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 /* small screen */
 @media screen and (max-width:700px) {
-
   .form-1-input {
     display: flex;
     flex-direction: column;
@@ -555,6 +556,9 @@ main {
   .alert {
     padding: 0.25rem 0.4rem;
     font-size: .8rem;
+  }
+  .total-hr-label{
+    margin: 0;
   }
 }
 
@@ -593,7 +597,7 @@ main {
 }
 
 .form-2-quote h6 {
-  font-size: .8rem;
+  font-size: 1rem;
   color: var(--grey-600);
 }
 
@@ -804,7 +808,7 @@ main {
   grid-row: 2/3;
   grid-column: 1/-1;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   padding: 0 1.5rem;
   position: relative;
   margin: 0 auto;
@@ -873,7 +877,7 @@ main {
 /* small screen */
 @media screen and (max-width:700px) {
   .results-area-3 {
-    font-size: .9rem;
+    font-size: .85rem;
   } 
   .results-area-1 {
     margin-left: 1rem;
@@ -903,7 +907,7 @@ main {
     left: 35%;
     transition: .5s;
     padding: 3px 5px;
-    margin-top: 7px;
+    margin-top: 12px;
   }
 }
 
@@ -1048,13 +1052,13 @@ main {
 .skills-area {
   height: 75px;
   display: grid;
-  grid-template-columns:  repeat(auto-fill, 140px);
+  grid-template-columns: repeat(auto-fill, 139px);
   overflow: hidden;
   gap: 1rem;
 }
 
 /* for mobile */
-@media screen and (max-width:900px) {
+@media screen and (max-width:800px) {
   .skills-ribbon .active {
     transform: scaleX(1);
     border-radius: 15px
@@ -1067,26 +1071,33 @@ main {
 .show-skill {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
-  width: 140px;
   position: relative;
   cursor: pointer;
   opacity: 0;
-  visibility: none;
+  visibility: hidden;
   transition: var(--transition);
   transition-delay: .1s;
   padding: 0 4px;
+  word-wrap: break-word;
 }
 
 .skills-area h5 {
-  padding: 10px 0 5px 0;
   margin: 0;
   text-align: center;
+  background-color: #e3813b;
+  color: var(--grey-200);
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 3px;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .skills-area p {
   text-align: center;
-  padding-bottom: 5px;
-  margin: 0;
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: .85rem;
 }
 
 .show-skill::after {
@@ -1177,7 +1188,7 @@ main {
     left: 65%;
     transition: .5s;
     padding: 3px 5px;
-    margin-top: 7px;
+    margin-top: 12px;
   }
 }
 
