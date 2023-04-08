@@ -49,12 +49,12 @@ function calculateResult(date) {
                         <h6 class="year">${year}</h6>
                     </div>
                     <h6>Thats ${daysToComplete} days from now!!</h6>
-              </aside>
+                    </aside>
                 </div>
 
                 <div class="results-area-3">
                   <aside class="text-container">
-                    <p>Studying/learning ${daysPerWeek} days per week and dedicating ${hoursPerDay} hours per day you should achieve your goal around ${completeDay.format('MMMM Do YYYY')}.</p>
+                    <p>Dedicating ${daysPerWeek} days per week and ${hoursPerDay} hours per day you should achieve your goal around ${completeDay.format('MMMM Do YYYY')}.</p>
                   </aside>
                 </div>`
 }
