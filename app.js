@@ -46,18 +46,18 @@ function displayFormBtn () {
     const backToStartBtn = document.querySelector('.back-to-start');
 
     backToStartBtn.addEventListener('click', () => {
-    saveSkillsBtn.classList.remove('active');
+    saveSkillsBtn.classList.remove('show');
      window.location.reload()
     });
 
     // btn to save skill and show on botton of page
     saveSkillsBtn.addEventListener('click', () => {
 
-      if (saveSkillsBtn.classList.contains('active')) {
+      if (saveSkillsBtn.classList.contains('show')) {
             return 
         } else {
             saveSkill(moment())
-            saveSkillsBtn.classList.add('active');
+            saveSkillsBtn.classList.add('show');
             // save new skill to local storage
             value = JSON.parse(localStorage.getItem("value"))
             // push new skill to savedSkills array and saves to local storage
@@ -89,7 +89,7 @@ next.addEventListener('click', () => {
     if (formOneValidate() && currentActive == 1) {
         currentActive++
 
-        alert.classList.remove('active');
+        alert.classList.remove('show');
         // current active will not = more then the #'s of circles
         if (currentActive > circles.length) {
             currentActive = circles.length;
@@ -98,14 +98,14 @@ next.addEventListener('click', () => {
         getCurrentFormPage(currentActive)
         updateBar(circles, currentActive, prev, next);
     } else if (formOneValidate() == false) {
-        alert.classList.add('active');
+        alert.classList.add('show');
     }
 
     // form two validation
     if (formTwoValidate() && formOneValidate()) { 
         currentActive++
 
-        alert.classList.remove('active');
+        alert.classList.remove('show');
         // current active will not = more then the #'s of circles
         if (currentActive > circles.length) {
             currentActive = circles.length;
@@ -114,7 +114,7 @@ next.addEventListener('click', () => {
         getCurrentFormPage(currentActive)
         updateBar(circles, currentActive, prev, next);
     } else if (formTwoValidate() == false) {
-        alert.classList.add('active');
+        alert.classList.add('show');
     }
 });
 
@@ -161,7 +161,7 @@ function displaySavedSkill () {
     skillTitle.innerHTML = 'My Skills'
 
     // if there is skills saved will display the skiils box
-    savedSkills[0] ? savedSkillsContainer.classList.add('active') : savedSkillsContainer.classList.remove('active');
+    savedSkills[0] ? savedSkillsContainer.classList.add('show') : savedSkillsContainer.classList.remove('show');
 
     const newSkill = savedSkills.map((skills) => {
         const {id, day, skill, hours} = skills
