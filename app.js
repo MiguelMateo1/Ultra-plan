@@ -7,9 +7,8 @@ import saveSkill from "./saveSkill.js"
 
 // empty array, to push into saved skill array once you save a skill
 let value = []
-
+//  gets saved skills from localStorage 
 let savedSkills = JSON.parse(localStorage.getItem("last"))
-console.log("final saved values 1", savedSkills)
 
 // progress bar elements select
 const startBtn = document.querySelector('.start-btn');
@@ -59,13 +58,14 @@ function displayFormBtn () {
         } else {
             saveSkill(moment())
             saveSkillsBtn.classList.add('active');
-            //   save skill to local storage
+            // save new skill to local storage
             value = JSON.parse(localStorage.getItem("value"))
+            // push new skill to savedSkills array and saves to local storage
             savedSkills.push(value)
             localStorage.setItem("last", JSON.stringify(savedSkills));
             JSON.parse(localStorage.getItem("last"))
 
-            //   set id to saved skills
+            //   create/adds an id to each saved skills (*id will be used to delete from list)
             function setSkillsId () {
                 for (var i = 0; i < savedSkills.length; i++) {
                     savedSkills[i].id = i
@@ -74,12 +74,11 @@ function displayFormBtn () {
                 }
             setSkillsId()
             displaySavedSkill() 
-            //  console.log("final saved values", savedSkills)
         }
     });
 }
 
-// var to update the current active btn and form page
+// var to get and update the current active btn and form page
 let currentActive = 1;
 
 // increase currentActive var
@@ -133,7 +132,7 @@ prev.addEventListener('click', () => {
 
 
 // for form 1,, this will clear input field if
-// radio btn is cheked or clear radio btn if their is text in input
+// radio btn is cheked or clears radio btn if their is text in input box
 const hoursInput = [...document.querySelectorAll('input[name="total-hours"]')];
 const customHour = document.querySelector('input[name="total-hours-custom"]');
 
@@ -161,6 +160,7 @@ function displaySavedSkill () {
     const skillTitle = document.createElement('h4');
     skillTitle.innerHTML = 'My Skills'
 
+    // if there is skills saved will display the skiils box
     savedSkills[0] ? savedSkillsContainer.classList.add('active') : savedSkillsContainer.classList.remove('active');
 
     const newSkill = savedSkills.map((skills) => {
@@ -185,11 +185,13 @@ function deleteSkill () {
     const skillsRibbon = document.querySelector('.skills-ribbon');
 
     skillsRibbon.addEventListener('click', (e) => {
-        if (e.target && e.target.tagName === "I") {
+        // only listes if clicks on the delete icon
+        if (e.target.tagName === "I") {
+            // seleted skill
             let selected = e.target.parentNode.dataset.id
-
+            // get index of seleted skill
             let index = savedSkills.findIndex(x => x.id == selected)
-    
+            // deletes skill based on its index
             savedSkills.splice(index,1)
                 
             localStorage.setItem("last", JSON.stringify(savedSkills));
