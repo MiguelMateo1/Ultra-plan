@@ -19,21 +19,17 @@ function updateBar(circles, currentActive, prev, next) {
             prev.disabled = false
             next.disabled = false
         }
-
-        // getting how many circles are active
-        const actives = document.querySelectorAll('.active');
-
-        // calculates % to add to the sytle.width progress line
-        let progressLine = (actives.length - 1) / (4 - 1) * 100 + "%";
-        console.log(progressLine)
-
-        if (progressLine == 100 + "%") {
-            // set width when progress line in full/100% 
-            progressLine = 97 + "%"
-        }
-            progress.style.width = progressLine;
         }
     )
+    // getting how many circles are active
+    const actives = document.querySelectorAll('.active')
+    // calculates % to add to the sytle.width progress line
+    let progressLine = (actives.length - 1) / (4 - 1) * 100 + "%";
+    if (progressLine == 100 + "%") {
+        // set width when progress line in full/100% 
+        progressLine = 97 + "%"
+    }
+    progress.style.width = progressLine;
 }
 
 export default updateBar;
