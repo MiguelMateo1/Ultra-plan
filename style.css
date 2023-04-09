@@ -151,7 +151,7 @@ ul {
   display: none;
 }
 
-.alert.active {
+.alert.show {
   display: inline-block;
 }
 
@@ -1019,7 +1019,7 @@ main {
   display: none;
 }
 
-.my-skills.active {
+.my-skills.show {
   display: inline;
 }
 
@@ -1059,7 +1059,7 @@ main {
 
 /* for mobile */
 @media screen and (max-width:800px) {
-  .skills-ribbon .active {
+  .skills-ribbon .show {
     transform: scaleX(1);
     border-radius: 15px
   }
@@ -1163,7 +1163,7 @@ main {
   transform: translate(-50%, -50%);
 }
 
-.save-skill.active {
+.save-skill.show {
   background-color: #999;
 }
 
@@ -1172,7 +1172,7 @@ main {
   visibility: hidden;
 }
 
-.save-skill.active:hover {
+.save-skill.show:hover {
   background-color: #999;
   cursor: not-allowed;
 }
