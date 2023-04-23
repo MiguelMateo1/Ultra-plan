@@ -8,7 +8,7 @@ import saveSkill from "./saveSkill.js"
 // empty array, to push into saved skill array once you save a skill
 let value = []
 //  gets saved skills from localStorage 
-let savedSkills = JSON.parse(localStorage.getItem("last"))
+let savedSkills = [...JSON.parse(localStorage.getItem("last"))]
 
 // progress bar elements select
 const startBtn = document.querySelector('.start-btn');
