@@ -26,12 +26,13 @@ export function formTwoValidate() {
     let valid = false;
     const totalDays = document.querySelectorAll('input[name="total-days"]');
     const dailyHours = document.querySelectorAll('input[name="daily-hours"]');
+    const halfHour = document.querySelector('input[name="half-hour"]');
 
     // for loop - checks if a both input fields have a checked box 
     for (var i=0; i < totalDays.length ; i++) {
         if (totalDays[i].checked) {
             dailyHours.forEach( (day) => {
-                if (day.checked) {
+                if (day.checked || halfHour.checked) {
                     valid = true;
                 }
             })

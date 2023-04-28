@@ -200,3 +200,46 @@ function deleteSkill () {
     })
 }
 deleteSkill()
+
+// get days/hours value to diplay once click on check box
+const daysInputs = document.querySelector('.total-days-form');
+daysInputs.addEventListener('click', (e) => {
+        getValue()
+});
+
+function getValue(){ 
+    const checkboxes = document.getElementsByName('total-days');
+
+        for (var i=0; i<checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                document.querySelector(".days-selected").innerText = checkboxes[i].value;
+            }
+        }
+  };
+
+
+const hoursInputs = document.querySelector('.total-hours-per');
+hoursInputs.addEventListener('click', (e) => {
+        getHours()
+});
+
+function getHours(){
+  
+    const checkboxes = document.getElementsByName('daily-hours');
+    const halfHour = document.getElementsByName('half-hour');
+
+        for (var i=0; i<checkboxes.length; i++) {
+            if (halfHour[0].checked) {
+                document.querySelector(".hours-selected").innerText = '.5'
+            }
+
+            if (checkboxes[i].checked) {
+                document.querySelector(".hours-selected").innerText = checkboxes[i].value;
+                if (halfHour[0].checked) {
+                    document.querySelector(".hours-selected").innerText = checkboxes[i].value + '.5'
+                }
+                return
+            }
+        }
+  };
+

@@ -2,18 +2,25 @@ function calculateResult(date) {
     const skillInput = document.querySelector('.skill-input').value;
     const totalHoursInput = document.querySelector('input[name="total-hours"]:checked');
     const totalDays = document.querySelector('input[name="total-days"]:checked');
-    const dailyHours = document.querySelector('input[name="daily-hours"]:checked');
+    let dailyHours = document.querySelector('input[name="daily-hours"]:checked');
     const customHour = document.querySelector('input[name="total-hours-custom"]');
+    const halfHour = document.querySelector('input[name="half-hour"]');
   
     const resultsContainer = document.querySelector('.results-area');
 
+    if (dailyHours == null) {
+      dailyHours = 0
+    } else {
+      dailyHours = dailyHours.value
+    }
+    console.log(halfHour.value)
     // getting values
     // custom total hours
     const totalHoursCuston = customHour.value;
     // how many days per week
     const daysPerWeek = totalDays.value
     // how many hours per day
-    const hoursPerDay = dailyHours.value;
+    const hoursPerDay =  halfHour.checked ? dailyHours + halfHour.value : dailyHours;
     // gets which ever have a valut, checked box or custom input
     const totalHours = totalHoursInput ? totalHoursInput.value : totalHoursCuston;
 
