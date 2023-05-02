@@ -595,7 +595,7 @@ main {
   bottom: -200px;
   transform: translate(-50%, 0%);
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 .form-2-quote h6 {
@@ -1184,6 +1184,13 @@ main {
   background-color: #dd7225;
 }
 
+.form-2-input h6 {
+  font-size: 1rem;
+  color: var(--grey-600);
+  text-align: center;
+  letter-spacing: .5px;
+}
+
 /* small screen */
 @media screen and (max-width:700px) {
   .save-skill {
@@ -1193,6 +1200,12 @@ main {
     padding: 3px 5px;
     margin-top: 12px;
   }
+  .form-2-input h6 {
+    font-size: .9rem;
+    margin: 0;
+    margin-top: 10px;
+  }
 }
+
 
 

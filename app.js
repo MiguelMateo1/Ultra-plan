@@ -212,7 +212,7 @@ function getValue(){
 
         for (var i=0; i<checkboxes.length; i++) {
             if (checkboxes[i].checked) {
-                document.querySelector(".days-selected").innerText = checkboxes[i].value;
+                document.querySelector(".days-selected").innerText = 'days seleted ' + checkboxes[i].value;
             }
         }
   };
@@ -230,13 +230,13 @@ function getHours(){
 
         for (var i=0; i<checkboxes.length; i++) {
             if (halfHour[0].checked) {
-                document.querySelector(".hours-selected").innerText = '.5'
+                document.querySelector(".hours-selected").innerText = 'hours seleted ' + '.5'
             }
 
             if (checkboxes[i].checked) {
-                document.querySelector(".hours-selected").innerText = checkboxes[i].value;
+                document.querySelector(".hours-selected").innerText = 'hours seleted ' + checkboxes[i].value;
                 if (halfHour[0].checked) {
-                    document.querySelector(".hours-selected").innerText = checkboxes[i].value + '.5'
+                    document.querySelector(".hours-selected").innerText = 'hours seleted ' + checkboxes[i].value + '.5'
                 }
                 return
             }
