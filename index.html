@@ -48,7 +48,7 @@
                 <div class="title-underline"></div>
               </div>
             
-              <div class="form-1-input form-input">
+              <div class="form-1-input form-input"  onsubmit="return false;">
                 <form autocomplete="off">
                   <label for="skill" class="form-label">What do you want to learn?</label>
                   <input title="Enter skill between 1-20 characters" type="text" class="skill-input" name="skill" id="skill" placeholder="spanish, piano, astronomy..">
@@ -209,22 +209,24 @@
             <span class="alert alert-danger">fill out form to continue</span>
           </div>
         </section>
+
+        <section class="my-skills">
+          <!-- <h4>No skills saved</h4> -->
+          <div class="skills-container">
+          <aside class="skills-ribbon">
+            <div class="skills-area">
+              <!-- <div class="show-skill">
+                <h5>skill</h5>
+                <p>days</p>
+                <i class="fa-solid fa-trash-can delete"></i>
+              </div> -->
+            </div>
+          </aside>
+          </div>
+        </section>
     </main>
 
-    <section class="my-skills">
-      <!-- <h4>No skills saved</h4> -->
-      <div class="skills-container">
-      <aside class="skills-ribbon">
-        <div class="skills-area">
-          <!-- <div class="show-skill">
-            <h5>skill</h5>
-            <p>days</p>
-            <i class="fa-solid fa-trash-can delete"></i>
-          </div> -->
-        </div>
-      </aside>
-      </div>
-    </section>
+ 
  
 
 <!-- script -->
