@@ -9,6 +9,7 @@
 html {
   font-size: 100%;
   scale: .95;
+  height: 100vh;
 } /*16px*/
 
 :root {
@@ -65,6 +66,10 @@ body {
   background: linear-gradient(146deg, rgba(9,6,64,1) 11%, rgba(23,50,91,1) 53%, rgba(68,132,145,1) 100%);
   background-attachment: fixed;
   color: var(--textColor);
+  height: 100%;
+  display: grid;
+  align-items: center;
+  margin-top: -30px;
 }
 
 p {
@@ -203,6 +208,7 @@ ul {
 main {
   display: grid;
   grid-template-rows: 1fr 50px;
+  padding-bottom: 15px;
 }
 
 .landing-screen {
@@ -212,7 +218,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 120px 1fr;
-  margin: 40px auto;
+  margin: 90px auto;
   border-radius: 30px;
   background: #ffffff;
   box-shadow: var(--shadow-4);
@@ -416,7 +422,8 @@ main {
 .form-screen {
   width: 85vw;
   max-width: 1100px;
-  margin: 40px auto;
+  /* margin: 40px auto; */
+  margin: 90px auto;
   border-radius: 30px;
   background: #ffffff;
   box-shadow: var(--shadow-4);
@@ -760,6 +767,7 @@ main {
 
 
 .calculate-btn {
+  font-size: 1rem;
   margin-top: 10px;
   padding: 7px 40px;
   background-color: #e78441;
@@ -771,6 +779,8 @@ main {
 
 .calculate-btn:disabled {
   background-color: #999;
+  margin-top: 5px;
+  scale: .5;
   cursor: not-allowed;
 }
 
@@ -1048,6 +1058,7 @@ main {
   position: absolute;
   font-size: 1.2rem;
   left: 50%;
+  top: -48px;
   color: white;
   transform: translate(-50%, -120%);
 }
