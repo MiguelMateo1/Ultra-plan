@@ -6,6 +6,9 @@ A simple web app that gets you a future date estimating the completion day of so
 
 Using a few inputs from the user and giving the user the calculated results.
 
+LINK
+https://ultra-plan.netlify.app/
+
 
 ### Description
 
